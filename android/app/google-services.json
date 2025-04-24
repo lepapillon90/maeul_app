@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1097765025076",
+    "project_id": "ma-eul-app",
+    "storage_bucket": "ma-eul-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097765025076:android:dd36614c99062bd6ee2161",
+        "android_client_info": {
+          "package_name": "com.example.maeul_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkHyDCV_irEcvZrl3AgFT5eK8FGIlE13k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
