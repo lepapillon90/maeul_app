@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maeul_app/ui/pages/splash/view_model/splash_view_model.dart';
 import 'dart:async';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -14,32 +13,9 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    _checkOnboarding();
-  }
-
-  Future<void> _checkOnboarding() async {
-    await Future.delayed(const Duration(seconds: 3));
-    final prefs = await SharedPreferences.getInstance();
-    final user = FirebaseAuth.instance.currentUser;
-
-    print('[SPLASH] FirebaseAuth.currentUser: ${user?.uid}');
-
-    if (user == null) {
-      print('[SPLASH] ➤ 이동: 온보딩 페이지 (비로그인)');
-      Navigator.pushReplacementNamed(context, '/onboarding');
-      return;
-    }
-
-    final isOnboarded = prefs.getBool('isOnboarded') ?? false;
-    print('[SPLASH] isOnboarded: $isOnboarded');
-
-    if (!isOnboarded) {
-      print('[SPLASH] ➤ 이동: 온보딩 페이지');
-      Navigator.pushReplacementNamed(context, '/onboarding');
-    } else {
-      print('[SPLASH] ➤ 이동: 홈');
-      Navigator.pushReplacementNamed(context, '/home');
-    }
+    Future.delayed(Duration.zero, () {
+      SplashViewModel(context);
+    });
   }
 
   @override

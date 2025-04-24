@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'onboarding_page1.dart';
 import 'onboarding_page2.dart';
 import 'onboarding_page3.dart';
@@ -19,7 +20,13 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
     return Scaffold(
       body: PageView(
         controller: _controller,
-        onPageChanged: (index) => setState(() => _currentIndex = index),
+        onPageChanged: (index) async {
+          setState(() => _currentIndex = index);
+          if (index == 2) { // last page
+            final prefs = await SharedPreferences.getInstance();
+            await prefs.setBool('onboarded', true);
+          }
+        },
         children: const [
           OnboardingPage1(),
           OnboardingPage2(),

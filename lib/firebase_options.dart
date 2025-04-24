@@ -50,19 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCkHyDCV_irEcvZrl3AgFT5eK8FGIlE13k',
-    appId: '1:1097765025076:android:dd36614c99062bd6ee2161',
-    messagingSenderId: '1097765025076',
-    projectId: 'ma-eul-app',
-    storageBucket: 'ma-eul-app.firebasestorage.app',
+    apiKey: 'AIzaSyCF58Q0jE7M4vIDd5iLlF8-AadunGHorBY',
+    appId: '1:6788613717:android:b829f721c4ecd71fe776dc',
+    messagingSenderId: '6788613717',
+    projectId: 'maeul-app',
+    storageBucket: 'maeul-app.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCHtFKwu-fDrlfZTmnZj9QMLuosk8G7IYI',
-    appId: '1:1097765025076:ios:f5efd0cbb6fbf6b3ee2161',
-    messagingSenderId: '1097765025076',
-    projectId: 'ma-eul-app',
-    storageBucket: 'ma-eul-app.firebasestorage.app',
+    apiKey: 'AIzaSyBd7I_A9DjS8bw0NXFLulx4Q54THIHrYfA',
+    appId: '1:6788613717:ios:4d85a988ba32bfa3e776dc',
+    messagingSenderId: '6788613717',
+    projectId: 'maeul-app',
+    storageBucket: 'maeul-app.firebasestorage.app',
+    iosClientId: '6788613717-ieb8s7q9b1ruphefakl1ohovblo67riu.apps.googleusercontent.com',
     iosBundleId: 'com.example.maeulApp',
   );
 

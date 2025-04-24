@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "1097765025076",
-    "project_id": "ma-eul-app",
-    "storage_bucket": "ma-eul-app.firebasestorage.app"
+    "project_number": "6788613717",
+    "project_id": "maeul-app",
+    "storage_bucket": "maeul-app.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1097765025076:android:dd36614c99062bd6ee2161",
+        "mobilesdk_app_id": "1:6788613717:android:b829f721c4ecd71fe776dc",
         "android_client_info": {
           "package_name": "com.example.maeul_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "6788613717-6kpr1n5acah437mu96aheof70aaativm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCkHyDCV_irEcvZrl3AgFT5eK8FGIlE13k"
+          "current_key": "AIzaSyCF58Q0jE7M4vIDd5iLlF8-AadunGHorBY"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6788613717-6kpr1n5acah437mu96aheof70aaativm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

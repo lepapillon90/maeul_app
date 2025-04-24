@@ -6,14 +6,14 @@ class LoginTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Center(
             child: Image.asset(
               'assets/images/logo.png', // adjust path as needed
-              height: 64,
+              height: 50,
               errorBuilder: (context, error, stackTrace) {
                 return const Icon(Icons.error_outline, size: 64, color: Colors.redAccent);
               },

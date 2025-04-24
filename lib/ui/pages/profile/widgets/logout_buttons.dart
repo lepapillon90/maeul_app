@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LogoutButtons extends StatelessWidget {
   const LogoutButtons({super.key});
@@ -8,8 +9,13 @@ class LogoutButtons extends StatelessWidget {
     return Column(
       children: [
         TextButton(
-          onPressed: () {
-            // 로그아웃 처리 로직
+          onPressed: () async {
+            try {
+              await FirebaseAuth.instance.signOut();
+              Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+            } catch (e) {
+              debugPrint('로그아웃 오류: $e');
+            }
           },
           child: const Text(
             '로그아웃',

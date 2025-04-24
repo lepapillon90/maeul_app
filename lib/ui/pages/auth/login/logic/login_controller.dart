@@ -6,6 +6,8 @@ class LoginController extends ChangeNotifier {
 
   bool isLoading = false;
 
+  bool autoLogin = false;
+
   void setLoading(bool value) {
     isLoading = value;
     notifyListeners();
@@ -14,5 +16,10 @@ class LoginController extends ChangeNotifier {
   void disposeControllers() {
     emailController.dispose();
     passwordController.dispose();
+  }
+
+  void setAutoLogin(bool value) {
+    autoLogin = value;
+    notifyListeners();
   }
 }

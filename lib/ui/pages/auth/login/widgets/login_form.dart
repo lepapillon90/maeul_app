@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:maeul_app/ui/pages/auth/login/logic/login_controller.dart';
+import 'package:maeul_app/ui/pages/auth/login/logic/login_validator.dart';
+import 'package:maeul_app/ui/pages/auth/login/service/login_service.dart';
 import 'package:provider/provider.dart';
+import 'package:maeul_app/core/widgets/maeul_primary_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -14,7 +17,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = context.read<LoginController>();
+    final controller = context.watch<LoginController>();
     return Padding(
       padding: const EdgeInsets.all(24),
       child: Column(
@@ -78,6 +81,69 @@ class _LoginFormState extends State<LoginForm> {
                 },
               ),
             ),
+          ),
+          Row(
+            children: [
+              Checkbox(
+                value: controller.autoLogin ?? false,
+                onChanged: (value) async {
+                  if (value != null) {
+                    controller.setAutoLogin(value);
+                    await LoginService().setAutoLoginEnabled(value);
+                  }
+                },
+              ),
+              GestureDetector(
+                onTap: () async {
+                  final newValue = !(controller.autoLogin ?? false);
+                  controller.setAutoLogin(newValue);
+                  await LoginService().setAutoLoginEnabled(newValue);
+                },
+                child: const Text('자동 로그인'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          MaeulPrimaryButton(
+            text: '로그인',
+            onPressed: () async {
+              final email = controller.emailController.text.trim();
+              final password = controller.passwordController.text;
+
+              final emailError = LoginValidator.validateEmail(email);
+              final passwordError = LoginValidator.validatePassword(password);
+
+              if (emailError != null || passwordError != null) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(emailError ?? passwordError!)),
+                );
+                return;
+              }
+
+              try {
+                controller.setLoading(true);
+                final success = await LoginService().login(email: email, password: password);
+                controller.setLoading(false);
+
+                if (success) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('로그인 성공!')),
+                  );
+                  Navigator.pushReplacementNamed(context, '/home');
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('로그인 실패! 이메일과 비밀번호를 확인해주세요.')),
+                  );
+                }
+              } catch (e, stackTrace) {
+                controller.setLoading(false);
+                debugPrint('로그인 중 예외 발생: $e');
+                debugPrintStack(stackTrace: stackTrace);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('알 수 없는 오류가 발생했습니다. 나중에 다시 시도해주세요.')),
+                );
+              }
+            },
           ),
         ],
       ),
