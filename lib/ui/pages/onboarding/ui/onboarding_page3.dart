@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:maeul_app/core/constants/text_styles.dart';
 import 'package:maeul_app/core/constants/colors.dart';
 import 'package:maeul_app/core/widgets/dot_indicator.dart';
-import 'package:maeul_app/core/widgets/maeul_primary_button.dart';
+import 'package:maeul_app/core/widgets/primary_button.dart';
 
 class OnboardingPage3 extends StatelessWidget {
   const OnboardingPage3({super.key});
@@ -44,7 +44,7 @@ class OnboardingPage3 extends StatelessWidget {
                 style: MaeulTextStyles.onboardingBody,
               ),
               const Spacer(),
-              MaeulPrimaryButton(
+              PrimaryButton(
                 text: '시작하기',
                 onPressed: () async {
                   final prefs = await SharedPreferences.getInstance();

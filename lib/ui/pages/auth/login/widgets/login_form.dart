@@ -3,7 +3,7 @@ import 'package:maeul_app/ui/pages/auth/login/logic/login_controller.dart';
 import 'package:maeul_app/ui/pages/auth/login/logic/login_validator.dart';
 import 'package:maeul_app/ui/pages/auth/login/service/login_service.dart';
 import 'package:provider/provider.dart';
-import 'package:maeul_app/core/widgets/maeul_primary_button.dart';
+import 'package:maeul_app/core/widgets/primary_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -104,7 +104,7 @@ class _LoginFormState extends State<LoginForm> {
             ],
           ),
           const SizedBox(height: 16),
-          MaeulPrimaryButton(
+          PrimaryButton(
             text: '로그인',
             onPressed: () async {
               final email = controller.emailController.text.trim();
@@ -122,13 +122,16 @@ class _LoginFormState extends State<LoginForm> {
 
               try {
                 controller.setLoading(true);
-                final success = await LoginService().login(email: email, password: password);
+                final success = await LoginService().login(
+                  email: email,
+                  password: password,
+                );
                 controller.setLoading(false);
 
                 if (success) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('로그인 성공!')),
-                  );
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(const SnackBar(content: Text('로그인 성공!')));
                   Navigator.pushReplacementNamed(context, '/home');
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -140,7 +143,9 @@ class _LoginFormState extends State<LoginForm> {
                 debugPrint('로그인 중 예외 발생: $e');
                 debugPrintStack(stackTrace: stackTrace);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('알 수 없는 오류가 발생했습니다. 나중에 다시 시도해주세요.')),
+                  const SnackBar(
+                    content: Text('알 수 없는 오류가 발생했습니다. 나중에 다시 시도해주세요.'),
+                  ),
                 );
               }
             },

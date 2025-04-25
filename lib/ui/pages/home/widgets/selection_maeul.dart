@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:maeul_app/core/widgets/maeul_primary_button.dart';
-import 'package:maeul_app/ui/pages/home/widgets/maeul_weather_info.dart';
-import 'package:maeul_app/ui/pages/home/widgets/maeul_task_list.dart';
+import 'package:maeul_app/core/widgets/primary_button.dart';
+import 'package:maeul_app/ui/pages/maeul/widgets/maeul_weather_info.dart';
+import 'package:maeul_app/ui/pages/maeul/widgets/maeul_task_list.dart';
 
-class MaeulOnboardingCallToAction extends StatelessWidget {
-  const MaeulOnboardingCallToAction({super.key});
+class SelectionMaeul extends StatelessWidget {
+  const SelectionMaeul({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,27 +45,11 @@ class MaeulOnboardingCallToAction extends StatelessWidget {
                 bottom: 40,
                 left: 16,
                 right: 16,
-                child: MaeulPrimaryButton(text: '미을 시작하기', onPressed: () {}),
+                child: PrimaryButton(text: '미을 선택하기', onPressed: () {}),
               ),
             ],
           ),
-          const Text(
-            '신청 가능한 일손',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 16),
-          const MaeulTaskList(),
-          const SizedBox(height: 16),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: Color(0xFFD0C4AB)), // 연한 갈색 테두리
-            ),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            child: const MaeulWeatherInfo(),
-          ),
-          const SizedBox(height: 48),
+          
         ],
       ),
     );

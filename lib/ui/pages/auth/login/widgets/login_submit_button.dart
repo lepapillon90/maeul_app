@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maeul_app/core/widgets/maeul_primary_button.dart';
+import 'package:maeul_app/core/widgets/primary_button.dart';
 
 class LoginSubmitButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -10,7 +10,7 @@ class LoginSubmitButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-      child: MaeulPrimaryButton(
+      child: PrimaryButton(
         text: '로그인',
         onPressed: () {
           try {

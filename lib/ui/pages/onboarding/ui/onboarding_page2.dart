@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:maeul_app/core/constants/text_styles.dart';
 import 'package:maeul_app/core/constants/colors.dart';
 import 'package:maeul_app/core/widgets/dot_indicator.dart';
-import 'package:maeul_app/core/widgets/maeul_primary_button.dart';
+import 'package:maeul_app/core/widgets/primary_button.dart';
 
 class OnboardingPage2 extends StatelessWidget {
   const OnboardingPage2({super.key});
@@ -54,7 +54,7 @@ class OnboardingPage2 extends StatelessWidget {
                       fit: BoxFit.contain,
                     ),
                   ),
-                  MaeulPrimaryButton(
+                  PrimaryButton(
                     text: '다음',
                     onPressed: () {
                       Navigator.push(

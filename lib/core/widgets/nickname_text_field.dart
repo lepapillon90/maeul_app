@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:maeul_app/core/constants/colors.dart';
 
-class MaeulNicknameField extends StatelessWidget {
+class NicknameField extends StatelessWidget {
   final TextEditingController controller;
 
-  const MaeulNicknameField({super.key, required this.controller});
+  const NicknameField({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

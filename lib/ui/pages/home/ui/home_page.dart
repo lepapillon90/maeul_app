@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maeul_app/core/widgets/maeul_bottom_nav_bar.dart';
+import 'package:maeul_app/core/widgets/bottom_nav_bar.dart';
 import 'package:maeul_app/ui/pages/home/_tab/chat_tab/chat_tab.dart';
 import 'package:maeul_app/ui/pages/home/_tab/home_tab/home_tab.dart';
 import 'package:maeul_app/ui/pages/home/_tab/location_tab/location_tab.dart';
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color(0xFFFAF3E0),
       body: _tabs[_currentIndex],
-      bottomNavigationBar: MaeulBottomNavBar(
+      bottomNavigationBar: BottomNavBar(
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {

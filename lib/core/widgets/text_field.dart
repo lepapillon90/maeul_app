@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MaeulTextField extends StatelessWidget {
+class TextField extends StatelessWidget {
   final String label;
   final TextEditingController controller;
   final bool obscure;
 
 
-  const MaeulTextField({
+  const TextField({
     super.key,
     required this.label,
     required this.controller,

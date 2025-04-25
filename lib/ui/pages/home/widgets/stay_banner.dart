@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MaeulStayBanner extends StatelessWidget {
-  const MaeulStayBanner({super.key});
+class StayBanner extends StatelessWidget {
+  const StayBanner({super.key});
 
   @override
   Widget build(BuildContext context) {

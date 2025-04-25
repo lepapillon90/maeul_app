@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:maeul_app/core/constants/colors.dart';
 
-class MaeulIdField extends StatelessWidget {
+class PasswordField extends StatelessWidget {
   final TextEditingController controller;
 
-  const MaeulIdField({super.key, required this.controller});
+  const PasswordField({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      obscureText: true,
       decoration: InputDecoration(
-        labelText: '이메일',
+        labelText: '비밀번호',
         filled: true,
         fillColor: AppColors.inputBackground,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),

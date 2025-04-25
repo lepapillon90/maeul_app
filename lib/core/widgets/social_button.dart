@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maeul_app/core/constants/text_styles.dart';
-import 'package:maeul_app/core/widgets/maeul_text_field.dart';
+import 'package:maeul_app/core/widgets/text_field.dart';
 
-class MaeulSocialButton extends StatelessWidget {
+class SocialButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Widget icon;
@@ -10,7 +10,7 @@ class MaeulSocialButton extends StatelessWidget {
   final Color textColor;
   final Color? borderColor;
 
-  const MaeulSocialButton({
+  const SocialButton({
     super.key,
     required this.text,
     required this.onPressed,
